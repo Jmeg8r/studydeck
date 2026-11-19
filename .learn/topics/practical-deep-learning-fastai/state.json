@@ -1,0 +1,389 @@
+{
+  "version": 1,
+  "topic": "Practical Deep Learning (fast.ai)",
+  "slug": "practical-deep-learning-fastai",
+  "created": "2026-07-18",
+  "domains": [
+    {
+      "name": "Getting Started",
+      "slug": "getting-started",
+      "concepts": [
+        {
+          "name": "Your First Model",
+          "slug": "your-first-model",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Why deep learning doesn't need math PhDs or big data",
+            "Transfer learning & fine-tuning a pretrained model",
+            "fastbook: 01_intro"
+          ]
+        },
+        {
+          "name": "From Model to Production",
+          "slug": "model-to-production",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "The Drivetrain Approach & data collection",
+            "Deployment, domain shift, and feedback loops",
+            "fastbook: 02_production"
+          ]
+        },
+        {
+          "name": "Data Ethics",
+          "slug": "data-ethics",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Feedback loops, bias, and disinformation",
+            "Why ethics is an engineering concern, not an afterthought",
+            "fastbook: 03_ethics"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Training Foundations",
+      "slug": "training-foundations",
+      "concepts": [
+        {
+          "name": "MNIST from Scratch",
+          "slug": "mnist-from-scratch",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Tensors, broadcasting, and pixel similarity baselines",
+            "fastbook: 04_mnist_basics"
+          ]
+        },
+        {
+          "name": "Stochastic Gradient Descent",
+          "slug": "stochastic-gradient-descent",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "The seven-step training loop",
+            "Gradients, backprop, and mini-batches",
+            "fastbook: 04_mnist_basics"
+          ]
+        },
+        {
+          "name": "Loss Functions & Metrics",
+          "slug": "loss-functions-metrics",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Why loss ≠ metric; sigmoid, softmax, cross-entropy",
+            "fastbook: 04_mnist_basics, 05_pet_breeds"
+          ]
+        },
+        {
+          "name": "Learning Rates & Fine-Tuning",
+          "slug": "learning-rates-fine-tuning",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "LR finder, discriminative LRs, freezing/unfreezing",
+            "fastbook: 05_pet_breeds"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Computer Vision",
+      "slug": "computer-vision",
+      "concepts": [
+        {
+          "name": "Image Classification",
+          "slug": "image-classification",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Presizing & data augmentation",
+            "fastbook: 05_pet_breeds"
+          ]
+        },
+        {
+          "name": "Multi-label & Regression",
+          "slug": "multilabel-regression",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Binary cross-entropy & thresholding",
+            "Image regression (key points)",
+            "fastbook: 06_multicat"
+          ]
+        },
+        {
+          "name": "Scaling Models Up",
+          "slug": "scaling-models-up",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Progressive resizing, TTA, Mixup, label smoothing",
+            "fastbook: 07_sizing_and_tta"
+          ]
+        },
+        {
+          "name": "Convolutions",
+          "slug": "convolutions",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Kernels, stride, padding, receptive fields",
+            "Batch normalization and 1cycle training",
+            "fastbook: 13_convolutions"
+          ]
+        },
+        {
+          "name": "ResNets & Skip Connections",
+          "slug": "resnets-skip-connections",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Why identity shortcuts make deep nets trainable",
+            "fastbook: 14_resnet"
+          ]
+        },
+        {
+          "name": "Architecture Details",
+          "slug": "architecture-details",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Backbones, heads, U-Nets, Siamese networks",
+            "fastbook: 15_arch_details"
+          ]
+        },
+        {
+          "name": "Class Activation Maps",
+          "slug": "class-activation-maps",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Hooks and Grad-CAM interpretability",
+            "fastbook: 18_CAM"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Beyond Vision",
+      "slug": "beyond-vision",
+      "concepts": [
+        {
+          "name": "Collaborative Filtering",
+          "slug": "collaborative-filtering",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Embeddings & latent factors",
+            "Weight decay and the bootstrapping problem",
+            "fastbook: 08_collab"
+          ]
+        },
+        {
+          "name": "Tabular Data & Decision Trees",
+          "slug": "tabular-decision-trees",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Random forests, feature importance, embeddings for categoricals",
+            "fastbook: 09_tabular"
+          ]
+        },
+        {
+          "name": "NLP & Transfer Learning",
+          "slug": "nlp-transfer-learning",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "ULMFiT: LM pretraining → fine-tuning → classifier",
+            "Tokenization & numericalization",
+            "fastbook: 10_nlp"
+          ]
+        },
+        {
+          "name": "Language Models from Scratch",
+          "slug": "language-models-from-scratch",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "RNNs, LSTMs, and regularization (dropout, AR/TAR)",
+            "fastbook: 12_nlp_dive"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Under the Hood",
+      "slug": "under-the-hood",
+      "concepts": [
+        {
+          "name": "The Data Block API",
+          "slug": "data-block-api",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Datasets, DataLoaders, and Transform pipelines",
+            "fastbook: 11_midlevel_data"
+          ]
+        },
+        {
+          "name": "Optimizers & Callbacks",
+          "slug": "optimizers-callbacks",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Momentum, RMSProp, Adam; the callback system",
+            "fastbook: 16_accel_sgd"
+          ]
+        },
+        {
+          "name": "A Neural Net from Foundations",
+          "slug": "neural-net-from-foundations",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Forward & backward passes built from raw Python",
+            "fastbook: 17_foundations"
+          ]
+        },
+        {
+          "name": "Building a Learner",
+          "slug": "building-a-learner",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "A fastai Learner reimplemented from scratch",
+            "fastbook: 19_learner"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Practice & Process",
+      "slug": "practice-process",
+      "concepts": [
+        {
+          "name": "The fast.ai Learning Method",
+          "slug": "fastai-learning-method",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Top-down learning: whole game first, details later",
+            "fastbook: 01_intro, 20_conclusion"
+          ]
+        },
+        {
+          "name": "Deliberate Practice & Projects",
+          "slug": "deliberate-practice-projects",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Chapter questionnaires as retrieval practice",
+            "Personal projects & writing as the real test",
+            "fastbook: 20_conclusion"
+          ]
+        }
+      ]
+    }
+  ]
+}
