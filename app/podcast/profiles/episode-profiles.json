@@ -1,0 +1,68 @@
+[
+  {
+    "default_briefing": "Analyze the provided content from a business perspective. Discuss market implications, strategic insights, competitive advantages, and actionable business intelligence.",
+    "description": "Business-focused analysis and discussion",
+    "language": null,
+    "max_tokens": null,
+    "name": "business_analysis",
+    "num_segments": 6,
+    "outline_llm": null,
+    "speaker_config": "business_panel",
+    "transcript_llm": null
+  },
+  {
+    "default_briefing": "Create an educational explanation of the provided content. Break down complex concepts into digestible segments, use analogies and examples, and maintain an engaging teaching style.",
+    "description": "Single expert explaining complex topics",
+    "language": null,
+    "max_tokens": null,
+    "name": "solo_expert",
+    "num_segments": 4,
+    "outline_llm": null,
+    "speaker_config": "solo_expert",
+    "transcript_llm": null
+  },
+  {
+    "default_briefing": "This episode covers ONE chapter, which is supplied in full as the content. It is a focused deep-dive for a listener who has already read that chapter and is consolidating while walking — no visuals, no note-taking. Go deep on THIS chapter only: its mechanisms, why it matters, the trade-offs, and the most common misconceptions, correcting them explicitly. Briefly connect it to the wider subject (what came before, what it sets up), but do not drift into other chapters' material. Because the listener cannot see anything, recap the key takeaways at the end. Stay strictly grounded in the provided chapter; where it is silent, say so rather than speculate.",
+    "description": "Per-chapter deep-dive on a single source supplied as content. Fast model, built for batch generation across a whole book (one episode per chapter).",
+    "language": "en",
+    "max_tokens": null,
+    "name": "study-chapter",
+    "num_segments": 6,
+    "outline_llm": "qwen2.5:7b-instruct",
+    "speaker_config": "tech_experts",
+    "transcript_llm": "qwen2.5:7b-instruct"
+  },
+  {
+    "default_briefing": "This is a CONSOLIDATION episode for a listener who has ALREADY read the source material and is listening while walking — no visuals, no note-taking. Go deep: mechanisms, edge cases, trade-offs, and connections between concepts. Repeatedly pose 'why' and 'what if' questions out loud and then reason through the answers (elaborative interrogation). Surface the most common misconceptions about this material and correct them explicitly. Because the listener cannot see anything: recap the key takeaways at the end of each section, and re-anchor with 'earlier we said X' references. Assume familiarity with the basic terms; skip introductory definitions unless a term is being deepened. Stay strictly grounded in the sources; where the sources are uncertain or silent, say so rather than speculate.",
+    "description": "Study flow Step 6 — long-form walking episode (30-45 min). Consolidation discussion, assumes deep read is done.",
+    "language": "en",
+    "max_tokens": null,
+    "name": "study-deep-dive",
+    "num_segments": 8,
+    "outline_llm": "qwen3-coder:30b",
+    "speaker_config": "tech_experts",
+    "transcript_llm": "qwen3-coder:30b"
+  },
+  {
+    "default_briefing": "This is a PRIMING episode heard BEFORE the listener has studied the material. Goal: build the map, not the territory. Cover: (1) why this topic matters and where it fits, (2) the 3-6 major domains or big ideas in the sources, (3) how those pieces relate to each other, (4) what to pay attention to during deep study — the hard parts, the counterintuitive parts, the terms that will come up. Keep it structural and brief: name concepts and relationships, do NOT attempt exhaustive detail or long examples. Use plain language; define every term on first use. Stay strictly grounded in the source material — if the sources don't cover something, don't invent it. Close by telling the listener what questions they should hold in mind while reading the sources.",
+    "description": "Study flow Step 2 — short structural priming episode (~10 min). Advance organizer before deep study.",
+    "language": "en",
+    "max_tokens": null,
+    "name": "study-overview",
+    "num_segments": 4,
+    "outline_llm": "qwen2.5:7b-instruct",
+    "speaker_config": "tech_experts",
+    "transcript_llm": "qwen2.5:7b-instruct"
+  },
+  {
+    "default_briefing": "Create an engaging technical discussion about the provided content. Focus on practical insights, real-world applications, and detailed explanations that would interest developers and technical professionals.",
+    "description": "Technical discussion between 2 experts",
+    "language": null,
+    "max_tokens": null,
+    "name": "tech_discussion",
+    "num_segments": 5,
+    "outline_llm": "qwen2.5:7b-instruct",
+    "speaker_config": "tech_experts",
+    "transcript_llm": "qwen2.5:7b-instruct"
+  }
+]

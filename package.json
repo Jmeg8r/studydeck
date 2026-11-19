@@ -1,0 +1,20 @@
+{
+  "name": "studydeck",
+  "version": "1.0.0",
+  "description": "A personal deep-dive study system \u2014 point it at a topic, and it builds the curriculum, quizzes you, and renders podcasts.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT",
+  "author": "James F. Cruce",
+  "scripts": {
+    "start": "node app/server.mjs",
+    "test": "node --test \"app/**/*.test.mjs\"",
+    "verify": "node app/verify.mjs",
+    "verify:live": "node app/verify.mjs --live",
+    "recover": "node app/recover.mjs",
+    "dashboard:snapshot": "node app/dashboard-snapshot.mjs"
+  }
+}

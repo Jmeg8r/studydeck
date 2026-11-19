@@ -1,0 +1,17 @@
+[
+  {
+    "name": "qwen2.5:7b-instruct",
+    "provider": "ollama",
+    "type": "language"
+  },
+  {
+    "name": "qwen3-coder:30b",
+    "provider": "ollama",
+    "type": "language"
+  },
+  {
+    "name": "speaches-ai/Kokoro-82M-v1.0-ONNX",
+    "provider": "openai_compatible",
+    "type": "text_to_speech"
+  }
+]

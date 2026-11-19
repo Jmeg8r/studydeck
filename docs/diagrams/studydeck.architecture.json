@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "StudyDeck Cockpit",
+    "output": "studydeck.architecture.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "ui",
+      "type": "frontend",
+      "label": "Browser UI",
+      "sublabel": "app/web, ES modules",
+      "pos": [
+        30,
+        258
+      ],
+      "size": [
+        140,
+        64
+      ]
+    },
+    {
+      "id": "guard",
+      "type": "security",
+      "label": "Request guard",
+      "sublabel": "app/lib/guard.mjs",
+      "pos": [
+        220,
+        258
+      ],
+      "size": [
+        140,
+        64
+      ],
+      "tag": "Host + Origin + JSON"
+    },
+    {
+      "id": "router",
+      "type": "backend",
+      "label": "Router",
+      "sublabel": "app/router.mjs :4310",
+      "pos": [
+        410,
+        258
+      ],
+      "size": [
+        140,
+        64
+      ]
+    },
+    {
+      "id": "lib",
+      "type": "backend",
+      "label": "Domain logic",
+      "sublabel": "app/lib modules",
+      "pos": [
+        600,
+        220
+      ],
+      "size": [
+        140,
+        140
+      ]
+    },
+    {
+      "id": "store",
+      "type": "database",
+      "label": "Learning data",
+      "sublabel": ".learn/topics sidecars",
+      "pos": [
+        600,
+        480
+      ],
+      "size": [
+        140,
+        64
+      ],
+      "tag": "atomic writes"
+    },
+    {
+      "id": "on",
+      "type": "external",
+      "label": "Open Notebook",
+      "sublabel": "API :5055",
+      "pos": [
+        900,
+        60
+      ],
+      "size": [
+        190,
+        60
+      ]
+    },
+    {
+      "id": "tools",
+      "type": "external",
+      "label": "Local AI and media tools",
+      "sublabel": "Ollama, TTS, Firecrawl, ffmpeg",
+      "pos": [
+        900,
+        258
+      ],
+      "size": [
+        190,
+        64
+      ]
+    },
+    {
+      "id": "claude",
+      "type": "external",
+      "label": "Claude API",
+      "sublabel": "Roles view only",
+      "pos": [
+        900,
+        456
+      ],
+      "size": [
+        190,
+        60
+      ],
+      "tag": "leaves machine"
+    }
+  ],
+  "connections": [
+    {
+      "id": "ui-to-guard",
+      "from": "ui",
+      "to": "guard",
+      "label": "HTTP /api"
+    },
+    {
+      "id": "guard-to-router",
+      "from": "guard",
+      "to": "router"
+    },
+    {
+      "id": "router-to-lib",
+      "from": "router",
+      "to": "lib"
+    },
+    {
+      "id": "lib-to-store",
+      "from": "lib",
+      "to": "store",
+      "label": "read / append",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelAt": [
+        670,
+        420
+      ]
+    },
+    {
+      "id": "lib-to-on",
+      "from": "lib",
+      "to": "on",
+      "label": "sources, podcasts",
+      "fromSide": "top",
+      "toSide": "left"
+    },
+    {
+      "id": "lib-to-claude",
+      "from": "lib",
+      "to": "claude",
+      "label": "role turns",
+      "variant": "dashed"
+    },
+    {
+      "id": "lib-to-tools",
+      "from": "lib",
+      "to": "tools",
+      "label": "grading, TTS, search"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Local-only",
+      "items": [
+        "Zero runtime dependencies, Node stdlib",
+        "Bound to 127.0.0.1:4310"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Durable state",
+      "items": [
+        "Sidecars written temp-then-rename",
+        "Attempts appended, never rewritten"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Boundary",
+      "items": [
+        "Only Roles sends data to Anthropic",
+        "Other services degrade to 503 when down"
+      ]
+    }
+  ]
+}

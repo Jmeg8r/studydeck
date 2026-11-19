@@ -1,0 +1,4 @@
+# WHAT: diff JavaScript modules as text even if one ever contains a raw NUL byte.
+# WHY: git calls a file with a NUL byte binary, and a binary diff is an empty stub,
+#      so a review (human, Codex or the AI gate) of such a change reads nothing.
+*.mjs diff

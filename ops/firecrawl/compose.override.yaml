@@ -1,0 +1,38 @@
+# Overlay for ~/Projects/firecrawl/docker-compose.yaml.
+# Keep the unauthenticated local API on loopback and restore it when Docker starts.
+services:
+  api:
+    restart: unless-stopped
+    ports: !override
+      - "127.0.0.1:3002:3002"
+    environment:
+      SEARXNG_ENDPOINT: http://searxng:8080
+    depends_on:
+      searxng:
+        condition: service_started
+      nuq-postgres:
+        condition: service_started
+  playwright-service:
+    restart: unless-stopped
+  redis:
+    restart: unless-stopped
+  rabbitmq:
+    restart: unless-stopped
+  nuq-postgres:
+    restart: unless-stopped
+  searxng:
+    image: searxng/searxng@sha256:f6f67c89efdac7b1bd4805703764ecaa9d0777b86a101b86cae4f1563de4d627
+    restart: unless-stopped
+    networks:
+      - backend
+    env_file:
+      - ${HOME}/Projects/studydeck/ops/firecrawl/.env.local
+    volumes:
+      - ${HOME}/Projects/studydeck/ops/firecrawl/searxng.settings.yml:/etc/searxng/settings.yml:ro
+    mem_limit: 1G
+    cpus: 1.0
+    logging:
+      driver: json-file
+      options:
+        max-size: 5m
+        max-file: '2'

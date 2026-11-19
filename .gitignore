@@ -1,0 +1,55 @@
+node_modules
+
+# Secrets. The Open Notebook password is read server-side at boot from
+# ~/Projects/quorum/.env — never committed, never sent to the browser.
+.env
+
+# Tutorial screen recordings. Tracked by tasks/study-flow-video-manifest.json,
+# served by the cockpit, too large for git.
+docs/*.mp4
+docs/.video-renders/
+docs/.higgsfield-prep/
+
+# Local GGUF weights.
+models
+
+# Recovery scaffolding written beside the cockpit sidecars: in-flight temp files,
+# the last-known-good backup of each JSON sidecar, and the advisory mutation lock.
+# The sidecars themselves ARE committed — these are not learning artifacts.
+.learn/**/*.tmp
+.learn/**/*.bak
+.learn/**/*.lock
+# What `npm run recover` keeps of a primary it replaced: local evidence of the damage,
+# like the .bak it came from. Never committed — it is a broken or superseded copy.
+.learn/**/*.damaged-*
+
+# Role-session transcripts: full conversations with the Claude API, kept on this
+# machine so a session survives a reload. They can hold personal goals and answers, so
+# they never go to a remote. The session OUTCOMES beside them (sessions.jsonl,
+# diagnoses.jsonl) are committed like every other sidecar.
+# app/test/transcriptignore.test.mjs fails if this rule stops matching.
+.learn/**/cockpit/transcripts/
+
+# Chapter rendition audio: voiced clips, the assembled candidate and ffmpeg's concat
+# list, 15-30 MB per chapter. Kept on this machine only, like the docs/ recordings, so a
+# git push does not back them up. Each rendition's manifest.json (provenance and QC
+# evidence) IS committed (James, 2026-11-11).
+# app/test/audioignore.test.mjs fails if this rule stops matching.
+.learn/**/cockpit/audio/**/*.mp3
+.learn/**/cockpit/audio/**/concat.txt
+
+.DS_Store
+.coderabbit.local.yaml
+.lefthook-local.yml
+.cr-cache/
+*.cr-review.md
+
+# Serena's per-project language-server cache.
+.serena/
+
+# The last-known-good copy atomic.mjs keeps beside app config (see the .learn rule above).
+app/*.bak
+
+# Dashboard snapshot: JSON rebuilt by npm run dashboard:snapshot for the claude.ai
+# progress dashboard, which can't read .learn/. Derived output, regenerated on demand.
+.dashboard-snapshot/

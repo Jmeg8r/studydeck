@@ -1,0 +1,97 @@
+[
+  {
+    "description": "Business analysis panel with diverse perspectives",
+    "name": "business_panel",
+    "speakers": [
+      {
+        "backstory": "Former McKinsey consultant, now startup advisor. Expert in strategic analysis and market dynamics.",
+        "name": "Marcus Thompson",
+        "personality": "Strategic thinker, data-driven, excellent at identifying key insights and implications",
+        "voice_id": "am_echo"
+      },
+      {
+        "backstory": "Serial entrepreneur and investor. Focuses on practical implementation and execution.",
+        "name": "Elena Vasquez",
+        "personality": "Action-oriented, pragmatic, brings startup experience and execution focus",
+        "voice_id": "af_sky"
+      },
+      {
+        "backstory": "Youtube celebrity and business mogul. Focuses on practical implementation and execution.",
+        "name": "Johny Bing",
+        "personality": "Controversial, likes to question ideas and concepts. He brings a fresh perspective and always has a point to make.",
+        "voice_id": "am_onyx"
+      }
+    ],
+    "voice_model": "speaches-ai/Kokoro-82M-v1.0-ONNX"
+  },
+  {
+    "description": "Single expert for educational content",
+    "name": "solo_expert",
+    "speakers": [
+      {
+        "backstory": "Distinguished professor and researcher. Has a gift for making complex topics accessible to broad audiences.",
+        "name": "Professor Sarah Kim",
+        "personality": "Patient teacher, uses analogies and examples, breaks down complex concepts step by step",
+        "voice_id": "af_nova"
+      }
+    ],
+    "voice_model": "speaches-ai/Kokoro-82M-v1.0-ONNX"
+  },
+  {
+    "description": "Two technical experts for tech discussions",
+    "name": "tech_experts",
+    "speakers": [
+      {
+        "backstory": "Senior AI researcher and former tech lead at major companies. Specializes in making complex technical concepts accessible.",
+        "name": "Dr. Alex Chen",
+        "personality": "Analytical, clear communicator, asks probing questions to dig deeper into technical details",
+        "voice_id": "af_nova"
+      },
+      {
+        "backstory": "Full-stack engineer and tech entrepreneur. Loves practical applications and real-world implementations.",
+        "name": "Jamie Rodriguez",
+        "personality": "Enthusiastic, practical-minded, great at explaining implementation details and trade-offs",
+        "voice_id": "af_alloy"
+      }
+    ],
+    "voice_model": "speaches-ai/Kokoro-82M-v1.0-ONNX"
+  },
+  {
+    "description": "Derived from tech_experts with custom voices.",
+    "name": "tech_experts-mixed",
+    "speakers": [
+      {
+        "backstory": "Senior AI researcher and former tech lead at major companies. Specializes in making complex technical concepts accessible.",
+        "name": "Dr. Alex Chen",
+        "personality": "Analytical, clear communicator, asks probing questions to dig deeper into technical details",
+        "voice_id": "af_nova"
+      },
+      {
+        "backstory": "Full-stack engineer and tech entrepreneur. Loves practical applications and real-world implementations.",
+        "name": "Jamie Rodriguez",
+        "personality": "Enthusiastic, practical-minded, great at explaining implementation details and trade-offs",
+        "voice_id": "am_adam"
+      }
+    ],
+    "voice_model": "speaches-ai/Kokoro-82M-v1.0-ONNX"
+  },
+  {
+    "description": "tech_experts-mixed with Jamie on am_fenrir (am_adam too flat for dialogue — 2026-07-20)",
+    "name": "tech_experts-mixed-v2",
+    "speakers": [
+      {
+        "backstory": "Senior AI researcher and former tech lead at major companies. Specializes in making complex technical concepts accessible.",
+        "name": "Dr. Alex Chen",
+        "personality": "Analytical, clear communicator, asks probing questions to dig deeper into technical details",
+        "voice_id": "af_nova"
+      },
+      {
+        "backstory": "Full-stack engineer and tech entrepreneur. Loves practical applications and real-world implementations.",
+        "name": "Jamie Rodriguez",
+        "personality": "Enthusiastic, practical-minded, great at explaining implementation details and trade-offs",
+        "voice_id": "am_fenrir"
+      }
+    ],
+    "voice_model": "speaches-ai/Kokoro-82M-v1.0-ONNX"
+  }
+]

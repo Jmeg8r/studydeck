@@ -1,0 +1,22 @@
+use_default_settings:
+  engines:
+    keep_only:
+      - google
+      - bing
+      - brave
+search:
+  formats:
+    - html
+    - json
+server:
+  limiter: false
+  public_instance: false
+outgoing:
+  request_timeout: 12.0
+engines:
+  - name: google
+    disabled: false
+  - name: bing
+    disabled: false
+  - name: brave
+    disabled: false

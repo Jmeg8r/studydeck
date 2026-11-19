@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "server": {
+    "host": "127.0.0.1",
+    "port": 4310
+  },
+  "learnRoot": ".learn/topics",
+  "topics": [
+    {
+      "slug": "ai-agent-design-patterns",
+      "ring": "inner",
+      "notebookId": "notebook:mg4t7ty57v1c8gxg4iz9"
+    },
+    {
+      "slug": "practical-deep-learning-fastai",
+      "ring": "outer",
+      "notebookId": "notebook:ragj3l2ziiiu875nj42z"
+    },
+    {
+      "slug": "ai-engineering",
+      "ring": "outer",
+      "notebookId": "notebook:vov23598v5c33zon7ocw"
+    }
+  ],
+  "openNotebook": {
+    "baseUrl": "http://localhost:5055",
+    "envFile": "~/Projects/quorum/.env",
+    "passwordKey": "OPEN_NOTEBOOK_PASSWORD",
+    "expectedVersion": "1.15",
+    "workerContainer": "quorum-open_notebook-1"
+  },
+  "ollama": {
+    "baseUrl": "http://localhost:11434",
+    "model": "gemma4:31b-mlx"
+  },
+  "tts": {
+    "baseUrl": "http://127.0.0.1:8969",
+    "model": "speaches-ai/Kokoro-82M-v1.0-ONNX"
+  },
+  "claude": {
+    "baseUrl": "https://api.anthropic.com",
+    "model": "claude-opus-5-5",
+    "effort": {
+      "interviewer": "low",
+      "socratic": "low",
+      "sparring": "low",
+      "diagnostician": "medium"
+    },
+    "pricePerMTok": {
+      "input": 4,
+      "output": 20,
+      "cacheRead": 0.2,
+      "cacheWrite": 5,
+      "cacheWrite1h": 8
+    }
+  }
+}

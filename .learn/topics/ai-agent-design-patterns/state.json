@@ -1,0 +1,406 @@
+{
+  "version": 1,
+  "topic": "AI Agent Design Patterns",
+  "slug": "ai-agent-design-patterns",
+  "created": "2026-07-16",
+  "domains": [
+    {
+      "name": "Agent Foundations",
+      "slug": "agent-foundations",
+      "concepts": [
+        {
+          "name": "The Agent Loop",
+          "slug": "the-agent-loop",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Observe → think → act cycle",
+            "Termination conditions & max iterations",
+            "Repo: 07_simple-agent"
+          ]
+        },
+        {
+          "name": "Prompts as Programs",
+          "slug": "prompts-as-programs",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "System vs user prompt hierarchy",
+            "Prompt templates & few-shot examples",
+            "Repo: PROMPTING.md, 04_think"
+          ]
+        },
+        {
+          "name": "Context Window Management",
+          "slug": "context-window-management",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Token budgets & truncation strategies",
+            "Summarization & compaction",
+            "Context rot vs context relevance"
+          ]
+        },
+        {
+          "name": "Structured Output & Validation",
+          "slug": "structured-output-validation",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "JSON mode & schema-constrained decoding",
+            "Parsing, retries on malformed output"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tool Use",
+      "slug": "tool-use",
+      "concepts": [
+        {
+          "name": "Tool Definitions & Schemas",
+          "slug": "tool-definitions-schemas",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "JSON Schema for parameters",
+            "Descriptions as the real API contract"
+          ]
+        },
+        {
+          "name": "Tool Execution Loop",
+          "slug": "tool-execution-loop",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Tool-call → result → continue cycle",
+            "Parallel vs sequential tool calls",
+            "Repo: 07_simple-agent, 09_react-agent"
+          ]
+        },
+        {
+          "name": "Tool Routing with Embeddings",
+          "slug": "tool-routing-embeddings",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Scaling past the tool-count ceiling",
+            "Semantic selection of relevant tools",
+            "Repo: 15_tool-routing-embeddings"
+          ]
+        },
+        {
+          "name": "Model Context Protocol (MCP)",
+          "slug": "model-context-protocol",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Servers, clients, tools, resources",
+            "When MCP beats bespoke tool wiring"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reasoning Patterns",
+      "slug": "reasoning-patterns",
+      "concepts": [
+        {
+          "name": "Chain of Thought (CoT)",
+          "slug": "chain-of-thought",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Step-by-step decomposition",
+            "Zero-shot vs few-shot CoT",
+            "Repo: 14_chain-of-thought"
+          ]
+        },
+        {
+          "name": "ReAct (Reason + Act)",
+          "slug": "react",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Thought / Action / Observation format",
+            "Repo: 09_react-agent"
+          ]
+        },
+        {
+          "name": "Tree of Thought (ToT)",
+          "slug": "tree-of-thought",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Branching exploration & backtracking",
+            "Evaluation & pruning of branches",
+            "Repo: 12_tree-of-thought"
+          ]
+        },
+        {
+          "name": "Graph of Thought (GoT)",
+          "slug": "graph-of-thought",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Merging & refining thought nodes",
+            "When graphs beat trees",
+            "Repo: 13_graph-of-thought"
+          ]
+        },
+        {
+          "name": "Atom of Thought (AoT)",
+          "slug": "atom-of-thought",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Atomic, composable reasoning steps",
+            "Repo: 10_aot-agent"
+          ]
+        },
+        {
+          "name": "Reflection & Self-Critique",
+          "slug": "reflection-self-critique",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Generate → critique → revise loops",
+            "Self-consistency & verifier models"
+          ]
+        },
+        {
+          "name": "Plan-and-Execute",
+          "slug": "plan-and-execute",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Upfront planning vs step-wise replanning",
+            "Plan repair on failure"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Memory & Knowledge",
+      "slug": "memory-knowledge",
+      "concepts": [
+        {
+          "name": "Conversation Memory",
+          "slug": "conversation-memory",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Short-term vs long-term memory",
+            "Sliding windows & memory files",
+            "Repo: 08_simple-agent-with-memory"
+          ]
+        },
+        {
+          "name": "Embeddings & Semantic Search",
+          "slug": "embeddings-semantic-search",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Vector similarity & distance metrics",
+            "Chunking strategies",
+            "Repo: 15_tool-routing-embeddings"
+          ]
+        },
+        {
+          "name": "Retrieval-Augmented Generation (RAG)",
+          "slug": "retrieval-augmented-generation",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Retrieve → augment → generate pipeline",
+            "RAG vs long context vs fine-tuning"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Multi-Agent Orchestration",
+      "slug": "multi-agent-orchestration",
+      "concepts": [
+        {
+          "name": "Router & Dispatcher Patterns",
+          "slug": "router-dispatcher",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Intent classification & delegation",
+            "LLM router vs embedding router"
+          ]
+        },
+        {
+          "name": "Subagents & Delegation",
+          "slug": "subagents-delegation",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Context isolation per subagent",
+            "Handoffs & result synthesis",
+            "Orchestrator-worker topology"
+          ]
+        },
+        {
+          "name": "Workflows vs Agentic Loops",
+          "slug": "workflows-vs-agents",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Deterministic pipelines vs model-driven control flow",
+            "When NOT to build an agent"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Robustness & Production",
+      "slug": "robustness-production",
+      "concepts": [
+        {
+          "name": "Error Handling & Retries",
+          "slug": "error-handling-retries",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Retry with backoff, fallbacks, timeouts",
+            "Malformed output recovery",
+            "Repo: 11_error-handling"
+          ]
+        },
+        {
+          "name": "Guardrails & Input Validation",
+          "slug": "guardrails-input-validation",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Prompt injection defenses",
+            "Output filtering & allowlists"
+          ]
+        },
+        {
+          "name": "Agent Evaluation & Testing",
+          "slug": "agent-evaluation-testing",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Evals: graded tasks & LLM-as-judge",
+            "Regression suites for prompts"
+          ]
+        },
+        {
+          "name": "Observability & Tracing",
+          "slug": "observability-tracing",
+          "status": "unexplored",
+          "confidence": 0,
+          "practice_count": 0,
+          "explain_count": 0,
+          "last_explained": null,
+          "last_practiced": null,
+          "details": [
+            "Logging every model call & tool result",
+            "Cost & latency tracking"
+          ]
+        }
+      ]
+    }
+  ]
+}

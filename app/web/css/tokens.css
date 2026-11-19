@@ -1,0 +1,65 @@
+/* WHAT: The twin-theme token system (variant D graft) carrying variant C's palette.
+   WHY: One set of semantic names, two skins. Every component reads tokens only —
+        no component hard-codes a hex, so the light theme costs nothing to maintain. */
+
+:root {
+  /* Brand hues are theme-independent — they anchor both skins. */
+  --amber: #f0a840;
+  --coral: #e86a5a;
+  --teal: #4fb3aa;
+
+  --font-display: "Futura", "Avenir Next", "Avenir", "Century Gothic", sans-serif;
+  --font-mono: "Menlo", "SFMono-Regular", ui-monospace, monospace;
+
+  --radius: 10px;
+  --rail-w: 212px;
+}
+
+html.dark {
+  /* Coral and teal are fills; these are their text-safe shades (4.5:1 on every field). */
+  --error-text: #ff968b;
+  --success-text: #78c8bf;
+  --bg: #232732;
+  --bg-rail: #1b1f28;
+  --panel: #2b303d;
+  --panel-hi: #2e3444;
+  --txt: #f4efe6;
+  /* Solid, not translucent: a translucent text colour's contrast changes with what it sits
+     on, and at 50% it fell below 4.5:1 on panels. */
+  --dim: #b9bac0;
+  --faint: #a3a7b2;
+  --line: #f4efe61a;
+  --hover: #f4efe60a;
+
+  --accent-text: var(--amber);
+  --on-accent: #1b1f28;
+  --accent-wash: #f0a84012;
+
+  --arc-fill: #f4efe614;
+  --arc-stroke: #f4efe62e;
+  --rail-track: #f4efe633;
+}
+
+html.light {
+  --error-text: #a33425;
+  --success-text: #176963;
+  --bg: #f6f1e5;
+  --bg-rail: #efe8d8;
+  --panel: #fffdf8;
+  --panel-hi: #ffffff;
+  --txt: #20242b;
+  --dim: #5e5e64;
+  --faint: #626269;
+  --line: #20242b24;
+  --hover: #20242b0a;
+
+  /* Brand amber is too light for text on a cream field — darken for text only,
+     while fills and arcs keep the true brand hue. */
+  --accent-text: #8a5300;
+  --on-accent: #1b1f28;
+  --accent-wash: #f0a84024;
+
+  --arc-fill: #20242b14;
+  --arc-stroke: #20242b38;
+  --rail-track: #20242b33;
+}

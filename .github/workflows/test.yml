@@ -1,0 +1,100 @@
+# WHAT: Runs the test suite, on Linux, on every push to main and every PR into it.
+# WHY:  Until now this repo had no CI at all. CodeRabbit was the only registered check,
+#       so a green PR page meant a bot had read the diff — not that a single test ran.
+#       Every claim of "165 tests, 0 failures" was made from one laptop, on macOS.
+
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: test-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      # WHY: report every version's result. With fail-fast the second one is cancelled,
+      # and "did this break on 22 or on everything?" is the first question asked.
+      fail-fast: false
+      matrix:
+        node: ['22', '24']
+    name: node ${{ matrix.node }}
+    steps:
+      # SHA-pinned (v7 as of 2026-11-05), like secret-scan.yml. These two actions are this
+      # job's only third-party code, and every workflow here holds the same repo-write token
+      # that posts the ai-review verdict: a moved tag could post a forged PASS (Codex
+      # challenge on the gate bootstrap PR, 2026-11-05).
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          # WHY: checkout leaves the job token in .git/config unless told not to, and
+          # the next thing this job does is execute code from the repo — the suite is
+          # repo-controlled by definition. No step here needs authenticated git.
+          persist-credentials: false
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: ${{ matrix.node }}
+          # WHY: `cache: npm` is absent AND caching is switched off explicitly. The
+          # default is on the moment package.json grows a `packageManager` (or
+          # `devEngines.packageManager`) field naming npm — so silence here is a
+          # setting that changes under us, and a cache for a tree with nothing to
+          # install is at best noise.
+          package-manager-cache: false
+
+      # WHY: hard rule 5 — app/ has zero runtime dependencies and no build step.
+      # `npm test` passing with node_modules ABSENT is what proves that rule, so an
+      # install step here would quietly retire the guarantee instead of checking it.
+      # These two assertions are the rule, written down where it is enforced.
+      - name: Assert the tree is dependency-free
+        run: |
+          if [ -e node_modules ]; then
+            echo "::error::node_modules exists before any install step — rule 5 (zero runtime dependencies) no longer holds."
+            exit 1
+          fi
+          if ! jq -e '
+            [.dependencies, .devDependencies, .optionalDependencies, .peerDependencies]
+            | map(. // {} | length) | add == 0
+          ' package.json > /dev/null; then
+            echo "::error::package.json declares dependencies. app/ is Node stdlib only — see CLAUDE.md hard rule 5."
+            exit 1
+          fi
+
+      - name: npm test
+        run: npm test
+
+      # WHY: .learn/ and the cockpit/ sidecars are committed learning artifacts, and a
+      # corrupt one degrades into "fewer cards" rather than an error (assessment F12).
+      # verify is read-only and exits 0 clean / 1 damaged / 2 could-not-check, so it
+      # costs a second here and catches a bad sidecar at the commit that introduced it.
+      - name: Verify committed learning artifacts are intact
+        run: npm run verify
+
+  # WHY: a single stable check name to require in the protect-main ruleset. Matrix jobs
+  # are named after their matrix values, so requiring "node 22" pins the ruleset to the
+  # matrix — drop a version and the required check never reports, blocking every PR.
+  ci:
+    if: always()
+    needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+      # WHY: the matrix result goes through env rather than straight into the script.
+      # It is a trusted value today, but interpolating ${{ }} into a shell body is the
+      # habit that turns an untrusted field into command injection later.
+      - name: Require the test matrix to have passed
+        env:
+          RESULT: ${{ needs.test.result }}
+        run: |
+          if [ "$RESULT" != "success" ]; then
+            echo "::error::test matrix result: $RESULT"
+            exit 1
+          fi
